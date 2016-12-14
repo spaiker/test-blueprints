@@ -1,0 +1,53 @@
+{
+    "name": "My-Cassandra-cluster",
+    "description": "The sample cassandra cluster",
+    "nodes": [{
+	"name": "cassandra_seed_1",
+	"template": "cassandra37@bea6be9bd9d7fb8e61182752cd592fd11b534af7",
+	"peer_group": "US-GROUP",
+	"size": "MEDIUM"
+    }, {
+	"name": "cassandra_seed_2",
+	"template": "cassandra37@bea6be9bd9d7fb8e61182752cd592fd11b534af7",
+	"peer_group": "EU-GROUP",
+	"size": "MEDIUM"
+    }, {
+	"name": "cassandra_data_1",
+	"template": "cassandra37@bea6be9bd9d7fb8e61182752cd592fd11b534af7",
+	"peer_group": "US-GROUP"
+    }, {
+	"name": "cassandra_data_2",
+	"template": "cassandra37@bea6be9bd9d7fb8e61182752cd592fd11b534af7",
+	"peer_group": "US-GROUP"
+    }, {
+	"name": "cassandra_data_3",
+	"template": "cassandra37@bea6be9bd9d7fb8e61182752cd592fd11b534af7",
+	"peer_group": "EU-GROUP"
+    }, {
+	"name": "cassandra_data_4",
+	"template": "cassandra37@bea6be9bd9d7fb8e61182752cd592fd11b534af7",
+	"peer_group": "EU-GROUP"
+    }],
+    "peerGroups": [{
+	"name": "US-GROUP",
+	"pricingPref": {
+	    "maxPrice": "20"
+	},
+	"hwPreferences": {
+	    "avgCpuLoad": "50",
+	    "minFreeRam": "128MiB",
+	    "minFreeDiskSpace": "500MiB"
+	},
+	"zonePreferences": {},
+	"proximityPreferences": {}
+    }, {
+	"name": "EU-GROUP"
+    }],
+    "sshKey": "ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQCjo6fLXczBYpZTd7dpOZDgiasvuQfjkQNiGyU7MdT3qpr8mbWbrJKhWjjxhsi8N6wlVs5PWwWv6H0SMR+SA5/WwaQ2XVH44Ur1Inuy07UO/RQUE/k8nCt5CE9r1XeJBdVoafzh45IWYmd0nA2dJp0ttA1+lg5D8hkj+PAWgwUME8a3vJYC0tXa3KtEeaGPqjvIQsO/c266HSg9mupoMx7moQ3/LB4o+EmWpR4K5KtPccOmWTm9lpGP+WYkYdBGnZ5zCdagzdHcIa+EBEWOeYy4A50LxZIJvZYTWxhGFtBFXo+SljY8bV01kbCnfdSMfy4URCZPbn3qpZ6cPYUQm047 tzhamakeev@tzhamakeev-HP-ENVY-TS-15-Notebook-PC",
+    "configuration": {
+	"plugin": "cassandra",
+	"params": {
+	    "clusterName": "MyCluster"
+	}
+    }
+}
